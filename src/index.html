@@ -1,44 +1,36 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
-</head>
-<body>
-    
-    <div id="home" class="bg-cover flex flex-col" style="background-image: url('/img/picture.png'); height: 995px">
-        <div class="mt-52">
-            <h1 class="text-white text-7xl text-center font-bold">text</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./output.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="home" class="bg-cover flex flex-col" style="background-image: url('/img/gffef.jpg'); height: 1800px">
+            <nav id="navbar" class="fixed top-0 w-full z-50 transition-transform duration-300 transform translate-y-0">
+                <div class="container mx-auto py-4 px-4">
+                  <ul class="flex justify-center space-x-4 gap-8">
+                    <li><a href="#" class="font-bold text-white text-3xl hover:text-gray-400">Home</a></li>
+                    <li><a href="#" class="font-bold text-white text-3xl hover:text-gray-400">About me</a></li>
+                    <li><a href="#" class="font-bold text-white text-3xl hover:text-gray-400">Contact</a></li>
+                  </ul>
+                </div>
+            </nav>
+            <div class="flex flex-row">
+                <div class="rounded-3xl backdrop-blur-sm bg-white/30 mt-52 mx-28 h-[500px] w-[600px]">
+                    <div class="text-white font-bold text-center text-3xl mt-6">
+                        <h1>About me</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-row-reverse">
+                <div class="rounded-3xl backdrop-blur-sm bg-white/30 mt-52 mx-28 h-[500px] w-[600px]">
+                    
+                </div>
+            </div>
         </div>
-        <nav class="bg-black p-4">
-            <div class="flex justify-between items-center">
-                <div class="text-white font-mono font-bold text-xl">Robin Mihkelson</div>
-                
-                <div class="block lg:hidden">
-                    <button id="burger-menu-toggle" class="text-white focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="3" y1="12" x2="21" y2="12" />
-                            <line x1="3" y1="6" x2="21" y2="6" />
-                            <line x1="3" y1="18" x2="21" y2="18" />
-                        </svg>
-                    </button>
-                </div>
-                
-                <div class="hidden lg:flex lg:items-center lg:space-x-6">
-                    <a href="#" class="text-white hover:text-gray-300">Home</a>
-                    <a href="#" class="text-white hover:text-gray-300">About</a>
-                    <a href="#" class="text-white hover:text-gray-300">Contact</a>
-                </div>
-            </div>
-            
-            <div id="burger-menu" class="hidden lg:hidden">
-                <a href="#" class="block py-2 px-4 text-white hover:bg-gray-700">Home</a>
-                <a href="#" class="block py-2 px-4 text-white hover:bg-gray-700">About</a>
-                <a href="#" class="block py-2 px-4 text-white hover:bg-gray-700">Contact</a>
-            </div>
-        </nav>    
-    </div>
+    
 
     <script>
         document.getElementById('burger-menu-toggle').addEventListener('click', function() {
@@ -46,5 +38,19 @@
         });
         </script>
     
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          if (scrollTop > lastScrollTop) {
+            navbar.style.transform = 'translateY(-100%)';
+          } else {
+            navbar.style.transform = 'translateY(0)';
+          }
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+      </script>
+      
 </body>
 </html>
